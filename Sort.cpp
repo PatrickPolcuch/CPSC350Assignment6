@@ -1,4 +1,9 @@
-//sorting time
+//Sort.cpp
+//Patrick Polcuch
+//2348668
+//CPSC350Assignment5
+
+//Sorting algorithms for integers
 #include "sort.h"
 bool Sort::Bubblesort(int *arr,int size){
   for(int i = 0;i < size-1;++i){
@@ -122,7 +127,7 @@ bool Sort::Insertionsort(int *arr, int size){
   return true;
 }
 
-bool Sort::isSorted(int *arr, int size){
+bool Sort::isSorted(int *arr, int size){//so I can easily check if the an array is sorted
   for(int i = 0; i<size-1;++i){
     if(arr[i]>arr[i+1]){
       return false;

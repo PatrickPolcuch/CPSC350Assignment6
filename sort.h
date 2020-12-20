@@ -1,4 +1,9 @@
 //sort.h
+//Patrick Polcuch
+//2348668
+//CPSC350Assignment5
+
+//my .h file for Sort.cpp
 #include <iostream>
 using namespace std;
 

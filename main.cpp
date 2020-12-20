@@ -1,5 +1,9 @@
 //main.cpp
+//Patrick Polcuch
+//2348668
+//CPSC350Assignment5
 
+//Used to test sorting algorithms and display their run times
 #include <fstream>
 #include <sstream>
 #include <time.h>
@@ -27,7 +31,7 @@ int main(int argc,char** argv){
   int *Insertionarray = new int[arraySize];
   int *Bubblearray = new int[arraySize];//There is probably a better way to do this
 
-  for(int i = 0;i<arraySize;++i){
+  for(int i = 0;i<arraySize;++i){//fills the arrays
     if(!getline(NumbersFile,curentLine)){
       cout<<"Not enough numbers in the file"<<endl;
       return 1;
@@ -45,13 +49,13 @@ int main(int argc,char** argv){
   time_t start;
   time_t end;
 
-  start = time(NULL);
+  start = time(NULL);//to get starting time
   Sort::Quicksort(Quickarray,0,arraySize);
-  end = time(NULL);
-  int seconds = (int)difftime(end,start);
-  cout<<"Quick Sort:      "<<seconds/3600<<":"<<(seconds%3600)/60<<":"<<(seconds%3600)%60<<endl;
+  end = time(NULL);//to get the ending time
+  int seconds = (int)difftime(end,start);//calc how much time the algorithm took
+  cout<<"Quick Sort:      "<<seconds/3600<<":"<<(seconds%3600)/60<<":"<<(seconds%3600)%60<<endl;//display Hours:Minutes:Seconds
 
-  start = time(NULL);
+  start = time(NULL);//same as above
   Sort::Mergesort(Mergearray,0,arraySize-1);
   end = time(NULL);
   seconds = (int)difftime(end,start);
@@ -75,8 +79,5 @@ int main(int argc,char** argv){
   seconds = (int)difftime(end,start);
   cout<<"Bubble Sort:     "<<seconds/3600<<":"<<(seconds%3600)/60<<":"<<(seconds%3600)%60<<endl;
 
-  if(Sort::isSorted(Mergearray, 10000)){
-    cout<<"yes"<<endl;
-  }
   return 1;
 }
